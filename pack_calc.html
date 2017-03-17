@@ -1,0 +1,99 @@
+<!--
+   pack_calc.html
+   
+   Copyright 2017 Robert York <ryork@debian>
+     
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.24.1" />
+</head>
+
+<body>
+
+<div align="center">
+
+<H1>Welcome to Pack Calc</H1>
+
+
+<table>
+<tr><td>Name:</td> <td><input type="text" id="name"> </td></tr>
+<tr><td>Weight:</td> <td><input type="text" id = "weight"></td></tr>
+<tr><td>Build:</td> <td>
+<select id="build">
+	<option value="Skinny">Skinny</option>
+	<option value="Average">Average</option>
+	<option value="Athletic">Athletic</option>
+	<option value="Large">Large</option>
+</select>
+</td></tr>
+</table>
+
+<input type="button" value="Get Results!" onclick="packWeight()">
+<p>
+<h3><p1 id="target"></p1></h3>
+
+
+<script type="text/javascript">
+
+function packWeight(){
+	
+	var n = document.getElementById("name");
+	var w = document.getElementById("weight");
+	var b = document.getElementById("build");
+	
+if (b.value == "Skinny"){
+	
+	
+	var packWeightLow = w.value * .17;
+	var packWeightHigh = w.value * .20;
+	
+	document.getElementById("target").innerHTML = "Results for "+ n.value + "<br>" + "Min Pack Weight: " + packWeightLow +" lbs"+ "<br>"+ "Max Pack Weight: "+  packWeightHigh +" lbs" 
+	
+	}	
+else if (b.value == "Average"){
+	
+	var packWeightLow = w.value * .19;
+	var packWeightHigh = w.value * .23;
+	
+	document.getElementById("target").innerHTML = "Results for "+ n.value + "<br>" + "Min Pack Weight: " + packWeightLow +" lbs"+ "<br>"+ "Max Pack Weight: "+  packWeightHigh +" lbs" 
+	
+	}
+	
+else if (b.value == "Athletic"){
+	
+	var packWeightLow = w.value * .25;
+	var packWeightHigh = w.value * .30;
+	
+	document.getElementById("target").innerHTML = "Results for "+ n.value + "<br>" + "Min Pack Weight: " + packWeightLow +" lbs"+ "<br>"+ "Max Pack Weight: "+  packWeightHigh +" lbs" 
+	
+	}
+	
+else if (b.value == "Large") {
+	
+	var packWeightLow = w.value * .20;
+	var packWeightHigh = w.value * .25;
+	
+	document.getElementById("target").innerHTML = "Results for "+ n.value + "<br>" + "Min Pack Weight: " + packWeightLow +" lbs"+ "<br>"+ "Max Pack Weight: "+  packWeightHigh +" lbs" 
+	
+	}	
+	
+else {
+	
+	 document.getElementById("target").innerHTML = "Something went wrong!"
+	
+	}	
+
+}
+
+</script>	
+	
+</body>
+
+</html>
